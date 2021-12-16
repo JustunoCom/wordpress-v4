@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @package Justuno
+ * @package Justuno Flex
  */
 /*
-Plugin Name: Justuno
+Plugin Name: Justuno Flex
 Plugin URI: https://www.justuno.com
 Description: Grow your social audience, email subscribers & sales!
 Version: 2.5

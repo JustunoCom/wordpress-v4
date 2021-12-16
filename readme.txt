@@ -60,33 +60,5 @@ Then activate the plugin through the 'Plugins' menu in WordPress. You will need 
 
 == Changelog ==
 
-= 1.1 =
-* Added link 'Settings' in the plugin's actions section
-* Redesign plugin's settings page
-
-= 1.2 =
-* Add auto logging in user account via API
-
-= 1.3 =
-* Tested for 4.8
-* Updated Feature Suite
-
-= 2.0 =
-* Automation Scripts Added
-* Support for WooCommerce product and Order data
-* Data Synchronization
-
-= 2.1 =
-* Fixes Small bugs
-
-= 2.2 =
-* Small bugs removed
-
-= 2.3 =
-* Added links to bridge Justuno and WordPress
-
-= 2.4 =
-* Ability to handle Ajax Carts
-
-= 2.5 =
-* Ingestion Fix
+= 4.0 =
+* Compatibility with Justuno Flex
