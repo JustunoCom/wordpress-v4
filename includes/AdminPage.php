@@ -61,33 +61,7 @@ if (!function_exists('justuno_display_options')) {
             'justuno_api_key',
             array('label_for' => 'justuno_api_key')
         );
-          // -----------------------------------------
-
-            add_settings_section(
-                'justuno_sub_domain',
-                'Subdomain URL',
-                'justuno_sub_domain_description',
-                'justuno_base_settings'
-            );
-
-            // Register a callback
-            register_setting(
-                'justuno_base_settings',
-                'justuno_sub_domain',
-                'trim'
-            );
-
-            add_settings_field(
-                'justuno_sub_domain',
-                'Justuno Subdomain URL',
-                'justuno_sub_domain_field',
-                'justuno_base_settings',
-                'justuno_sub_domain',
-                array('label_for_sub_domain' => 'justuno_sub_domain')
-            );
-
-      // -----------------------------------------
-
+        
         if (class_exists('WooCommerce')) {
             add_settings_section(
                 'justuno_woocommerce_token',
