@@ -16,7 +16,9 @@ if (!class_exists('JustRESTManager')) {
 
         public function verifyWooCommerceToken($haders)
         {
-            if (isset($haders['HTTP_AUTHORIZATION'])) {
+            if ($_GET['type'] == 'cart' || $_GET['type'] == 'product-single') {
+                return true;
+            } else if (isset($haders['HTTP_AUTHORIZATION'])) {
                 return str_replace("Bearer ", "", $haders['HTTP_AUTHORIZATION']) == get_option('justuno_woocommerce_token');
             }
 
@@ -95,10 +97,10 @@ if (!class_exists('JustRESTManager')) {
             exit;
         }
 
-        public function getCartData($data)
+        public function getCartData()
         {
             if (class_exists('woocommerce')) {
-                return $this->JustWooService->getCartData($data);
+                return $this->JustWooService->getCartData();
             }
             header("HTTP/1.1 401 Unauthorized");
             echo json_encode(['message' => 'No Ecommerce plugin such as WooCommerce is active.']);

@@ -340,6 +340,13 @@ if (!class_exists('JustWooCommerce')) {
             );
         }
 
+        public function getSingleProduct($id)
+        {
+            $thumbSize = isset($data['thumb']) ? $data['thumb'] : 'medium';
+            $product =  wc_get_product($id);
+            return $this->mapProductData($product, $thumbSize);
+        }
+
         public function get_items($items)
         {
             $return = [];
@@ -392,34 +399,34 @@ if (!class_exists('JustWooCommerce')) {
         {
             $code = '';
             if (is_home()) {
-                $code .= 'juapp("local","pageType","home");';
+                $code .= 'ju4app("local","pageType","home");';
                 $code .= 'window._jupagetype="home";';
             } else if (is_product_category()) {
-                $code .= 'juapp("local","pageType","category");';
+                $code .= 'ju4app("local","pageType","category");';
                 $code .= 'window._jupagetype="category";';
             } else if (is_product()) {
                 global $post;
-                $code .= 'juapp("local","pageType","product");';
-                $code .= 'juapp("local","prodId","' . $post->ID . '");';
+                $code .= 'ju4app("local","pageType","product");';
+                $code .= 'ju4app("local","prodId","' . $post->ID . '");';
                 $code .= 'window._jupagetype="product";';
                 $code .= 'window._juprodId="' . $post->ID . '";';
             } else if (is_cart()) {
-                $code .= 'juapp("local","pageType","cart");';
+                $code .= 'ju4app("local","pageType","cart");';
                 $code .= 'window._jupagetype="cart";';
             } else if (is_checkout()) {
-                $code .= 'juapp("local","pageType","checkout");';
+                $code .= 'ju4app("local","pageType","checkout");';
                 $code .= 'window._jupagetype="checkout";';
             }
 
             if (is_user_logged_in()) {
                 $current_user = wp_get_current_user();
-                $code .= 'juapp("local","custId","' . $current_user->user_email . '");';
+                $code .= 'ju4app("local","custId","' . $current_user->user_email . '");';
                 $code .= 'window._jucustId="' . $current_user->user_email . '";';
             }
 
             $cart = \WC()->cart;
             $totals = $cart->get_totals();
-            $code .= 'juapp("cart", {
+            $code .= 'ju4app("cart", {
 	total:' . $totals['total'] . ',
 	subtotal:' . $totals['subtotal'] . ',
 	tax:' . $totals['total_tax'] . ',
@@ -429,7 +436,7 @@ if (!class_exists('JustWooCommerce')) {
 );';
             $cartItems = $cart->get_cart_contents();
             if (count($cartItems) > 0) {
-                $code .= "juapp('cartItems', [";
+                $code .= "ju4app('cartItems', [";
                 foreach ($cart->get_cart() as $key => $item) {
                     $cartItem = $cart->get_cart_item($key);
                     $attrs = '';
