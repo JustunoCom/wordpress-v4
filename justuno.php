@@ -4,7 +4,7 @@
  * @package Justuno Flex
  */
 /*
-Plugin Name: Justuno Flex
+Plugin Name: Justuno Reimagined
 Plugin URI: https://www.justuno.com
 Description: Grow your social audience, email subscribers & sales!
 Version: 2.5
