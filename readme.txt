@@ -61,4 +61,4 @@ Then activate the plugin through the 'Plugins' menu in WordPress. You will need 
 == Changelog ==
 
 = 4.0 =
-* Compatibility with Justuno Flex
+* Compatibility with the All New Justuno
