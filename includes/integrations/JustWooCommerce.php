@@ -342,8 +342,8 @@ if (!class_exists('JustWooCommerce')) {
 
         public function getSingleProduct($id)
         {
-            $thumbSize = isset($data['thumb']) ? $data['thumb'] : 'medium';
-            $product =  wc_get_product($id);
+            $thumbSize = 'medium';
+            $product = wc_get_product($id);
             return $this->mapProductData($product, $thumbSize);
         }
 
@@ -360,6 +360,17 @@ if (!class_exists('JustWooCommerce')) {
                 ];
             }
             return $return;
+        }
+
+        public function applyDiscountData($data)
+        {
+            $cart = \WC()->cart;
+            if (isset($data["code"]) && $data["code"] !== "") {
+                if ($cart->apply_coupon($data["code"]) == true) {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public function getCartData()
@@ -382,12 +393,12 @@ if (!class_exists('JustWooCommerce')) {
                     $variationId = $cartItem['variation_id'] > 0 ? $cartItem['variation_id'] : $cartItem['product_id'];
                     $product = $cartItem['data'];
                     $return['items'][] = [
-                        "productID"  => $cartItem['product_id'],
-                        "name"  => $product->get_title(),
+                        "productID" => $cartItem['product_id'],
+                        "name" => $product->get_title(),
                         "variationID" => $variationId,
                         "sku" => $product->get_sku(),
                         "qty" => $cartItem['quantity'],
-                        "price" =>  floatval($product->get_price()),
+                        "price" => floatval($product->get_price()),
                         'key' => $key,
                     ];
                 }
