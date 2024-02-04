@@ -3,7 +3,7 @@ add_action('admin_menu', 'justuno_plugin_menu');
 if (!function_exists('justuno_plugin_menu')) {
     function justuno_plugin_menu()
     {
-        add_options_page('Justuno', 'Justuno', 'manage_options', 'justuno-settings-conf', 'justuno_plugin_page');
+        add_options_page('Justuno Reimagined', 'Justuno Reimagined', 'manage_options', 'justuno-settings-conf', 'justuno_plugin_page');
     }
 }
 
@@ -11,19 +11,21 @@ if (!function_exists('justuno_plugin_page')) {
     function justuno_plugin_page()
     {
         $link = 'http://www.justuno.com/getstarted.html';
-?>
+        ?>
         <div class="wrap">
-            <?php screen_icon('plugins'); ?> <h2>Justuno</h2>
+            <?php screen_icon('plugins'); ?>
+            <h2>Justuno Reimagined</h2>
             <form action="options.php" method="post">
                 <?php settings_fields('justuno_base_settings'); ?>
                 <?php do_settings_sections('justuno_base_settings'); ?>
                 <input name="Submit" class="button button-primary" type="submit" value="Save Changes" />
-                <?php if (class_exists('WooCommerce')) : ?>
-                    <input name="button" class="button button-secondary" type="button" onclick="justuno_generate_random_token()" value="Regenerate Token" />
+                <?php if (class_exists('WooCommerce')): ?>
+                    <input name="button" class="button button-secondary" type="button" onclick="justuno_generate_random_token()"
+                        value="Regenerate Token" />
                 <?php endif; ?>
             </form>
         </div>
-<?php
+        <?php
     }
 }
 
@@ -67,7 +69,7 @@ if (!function_exists('justuno_display_options')) {
 
         add_settings_section(
             'justuno_sub_domain',
-            'Subdomain URL',
+            'Visibility Boost Domain',
             'justuno_sub_domain_description',
             'justuno_base_settings'
         );
