@@ -31,7 +31,7 @@ if (!function_exists('justuno_script_for_subdomain')) {
             $baseURL = "https://" . get_option('justuno_sub_domain');
         }
         global $post;
-        echo '<script data-cfasync="false">window.ju4_auth="' . $data . '";window.ju4_num="' . $data . '";window.ju4_asset_host="' . $baseURL . '/embed";window.ju4_pApi="' . $baseURL . '";(function(i,s,o,g,r,a,m){i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)};a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script",ju4_asset_host+"/ju_woocommerce_init.js?v=2","ju4app");' . $code . '</script>';
+        echo '<script data-cfasync="false">window.ju4_auth="' . esc_attr($data) . '";window.ju4_num="' . esc_attr($data) . '";window.ju4_asset_host="' . esc_attr($baseURL) . '/embed";window.ju4_pApi="' . esc_attr($baseURL) . '";(function(i,s,o,g,r,a,m){i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)};a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script",ju4_asset_host+"/ju_woocommerce_init.js?v=2","ju4app");' . $code . '</script>';
     }
 }
 
