@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @package Justuno Flex
+ * @package Justuno Reimagined
  */
 /*
 Plugin Name: Justuno Reimagined
 Plugin URI: https://www.justuno.com
 Description: Grow your social audience, email subscribers & sales!
-Version: 2.5
+Version: 4.0
 Author: Justuno
 Author URI: http://www.justuno.com
 License: GPLv2 or later
@@ -22,6 +22,7 @@ if (!function_exists('justuno_activation')) {
         // send any api calls when activation
         update_option('justuno_api_key', '');
         update_option('justuno_woocommerce_token', '');
+        update_option('justuno_sub_domain', 'justone.ai');
     }
 }
 
@@ -43,11 +44,13 @@ add_filter('plugin_action_links_justuno/justuno.php', 'nc_settings_link');
 function nc_settings_link($links)
 {
     // Build and escape the URL.
-    $url = esc_url(add_query_arg(
-        'page',
-        'justuno-settings-conf',
-        get_admin_url() . 'options-general.php'
-    ));
+    $url = esc_url(
+        add_query_arg(
+            'page',
+            'justuno-settings-conf',
+            get_admin_url() . 'options-general.php'
+        )
+    );
     // Create the link.
     $settings_link = "<a href='$url'>" . __('Settings') . '</a>';
     // Adds the link to the end of the array.

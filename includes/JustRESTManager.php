@@ -39,7 +39,16 @@ if (!class_exists('JustRESTManager')) {
                             exit;
                         }
 
-                        if ($request['type'] === 'cart') {
+                        if ($request['type'] === 'discount') {
+                            $return = $this->applyDiscountData();
+                            if ($return === false) {
+                                header("HTTP/1.1 401 Unauthorized");
+                                echo json_encode(['message' => 'Invalid Code.']);
+                                exit;
+                            } else {
+                                $data = ['message' => 'Cuopon Applied successfully.'];
+                            }
+                        } else if ($request['type'] === 'cart') {
                             $data = $this->getCartData();
                         } else if ($request['type'] === 'order') {
                             $data = $this->getOrderData($request);
@@ -91,6 +100,16 @@ if (!class_exists('JustRESTManager')) {
         {
             if (class_exists('woocommerce')) {
                 return $this->JustWooService->getOrderData($data);
+            }
+            header("HTTP/1.1 401 Unauthorized");
+            echo json_encode(['message' => 'No Ecommerce plugin such as WooCommerce is active.']);
+            exit;
+        }
+
+        public function applyDiscountData()
+        {
+            if (class_exists('woocommerce')) {
+                return $this->JustWooService->applyDiscountData($_GET);
             }
             header("HTTP/1.1 401 Unauthorized");
             echo json_encode(['message' => 'No Ecommerce plugin such as WooCommerce is active.']);

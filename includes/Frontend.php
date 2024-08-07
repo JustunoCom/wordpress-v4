@@ -22,16 +22,16 @@ if (!function_exists('justuno_script_for_subdomain')) {
     function justuno_script_for_subdomain()
     {
         $data = esc_attr(get_option('justuno_api_key', ''));
-        $baseURL = "https://justone.ai";
+        $baseURL = "https://" . esc_attr(get_option('justuno_api_key', ''));
         $apiURL = "https://api.justuno.com";
         $objRESTManager = new Integrations\JustRESTManager();
         $code = $objRESTManager->getConversionTrackingCodes();
         $data_field_result = get_option('justuno_sub_domain');
         if ($data_field_result != "") {
-            $baseURL = get_option('justuno_sub_domain');
+            $baseURL = "https://" . get_option('justuno_sub_domain');
         }
         global $post;
-        echo '<script data-cfasync="false">window.ju4_auth="' . $data . '";window.ju4_num="' . $data . '";window.ju4_asset_host="' . $baseURL . '/embed";window.ju4_pApi="' . $baseURL . '";(function(i,s,o,g,r,a,m){i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)};a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script",ju4_asset_host+"/ju_woocommerce_init.js?v=2","ju4app");' . $code . '</script>';
+        echo '<script data-cfasync="false">window.ju4_auth="' . esc_attr($data) . '";window.ju4_num="' . esc_attr($data) . '";window.ju4_asset_host="' . esc_attr($baseURL) . '/embed";window.ju4_pApi="' . esc_attr($baseURL) . '";(function(i,s,o,g,r,a,m){i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)};a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script",ju4_asset_host+"/ju_woocommerce_init.js?v=2","ju4app");' . $code . '</script>';
     }
 }
 
@@ -77,7 +77,7 @@ function action_woocommerce_thankyou($order_get_id)
         });';
     }
     echo '<script type="text/javascript">' . $code . '</script>';
-};
+}
 
 // add the action 
 add_action('woocommerce_thankyou', 'action_woocommerce_thankyou', 10, 1);
