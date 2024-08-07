@@ -13,7 +13,6 @@ if (!function_exists('justuno_plugin_page')) {
         $link = 'http://www.justuno.com/getstarted.html';
         ?>
         <div class="wrap">
-            <?php screen_icon('plugins'); ?>
             <h2>Justuno Reimagined</h2>
             <form action="options.php" method="post">
                 <?php settings_fields('justuno_base_settings'); ?>
@@ -33,7 +32,8 @@ add_filter('admin_enqueue_scripts', 'justuno_admin_js_files');
 if (!function_exists('justuno_admin_js_files')) {
     function justuno_admin_js_files($files)
     {
-        wp_enqueue_script('my_custom_script', plugins_url('/js/admin.js', __FILE__));
+        $script_version = '1.0.0';
+        wp_enqueue_script('my_custom_script', plugins_url('/js/admin.js', __FILE__), array('jquery'), $script_version, true);
     }
 }
 
@@ -130,8 +130,8 @@ if (!function_exists('justuno_display_options')) {
 
         printf(
             '<input type="text" name="justuno_api_key" value="%1$s" class="all-options" id="%2$s" /><a style="margin-left: 20px" class="button button-primary" target="_blank" href="https://portal.justuno.com/app/account/embed-code">Find My Justuno Account Number</a>',
-            $data,
-            $args['label_for']
+            esc_attr($data),
+            esc_attr($args['label_for'])
         );
     }
 
@@ -149,8 +149,8 @@ if (!function_exists('justuno_display_options')) {
 
         printf(
             '<input type="text" name="justuno_sub_domain" value="%1$s" class="all-options" id="%2$s" />',
-            $result_data,
-            $args['label_for_sub_domain']
+            esc_attr($result_data),
+            esc_attr($args['label_for_sub_domain'])
         );
     }
     // ------------------------------------------------
@@ -168,8 +168,8 @@ if (!function_exists('justuno_display_options')) {
 
         printf(
             '<input type="text" name="justuno_woocommerce_token" class="all-options" value="%1$s" id="%2$s" />',
-            $data,
-            $args['label_for']
+            esc_attr($data),
+            esc_attr($args['label_for'])
         );
     }
 }
