@@ -8,52 +8,70 @@ Stable tag: trunk
 Contributors: justuno
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
 The most powerful free conversion marketing app in the market! Justuno is used by over 50,000 businesses around the world to create personalized experiences that convert through pop-ups, website messaging, product recommendations, and more.
 
 == Description ==
 
 = WHAT IS JUSTUNO? =
 Justuno is the fastest way to increase sales, delight customers, and hit your goals. As the most advanced website personalization and conversion platform on the market—we utilize billions of data points to provide the right message to the right visitor at the right time. 
+
 Using Justuno, you’ll grow your email/SMS lists faster, collect more zero and first-party data, unite your Martech stack, sell more (and at higher AOVs), reduce cart abandonment, and so much more.
+
 Leveraging Justuno’s workflow builder, you’ll be able to create seamless experiences triggered by specific actions or known data points for a tailored experience every visitor wants and deserves. Plus, with over 100 integrations, you’ll be able to optimize all of your marketing channels and amplify their ROI through an improved website experience 
+
 Start converting more visitors today with a 14-day free trial, or connect with our team for immediate strategic recommendations.
 (https://www.justuno.com/managed-services/?utm_campaign=WordPress%20Listing&utm_source=App%20Store&utm_medium=Profile)
 
 = Overview Of Justuno’s Robust Features =
+
 * **Intelligent Pop-Ups: Advanced Onsite Promotions** - The simplest and most effective way to build your email/SMS lists, increase conversions, generate sales opportunities, and more. Choose from our library of pre-built themes, or take complete control of your design!
+
 * **Intelligent Segmentation and Targeting** - Justuno’s proprietary visitor intelligence technology analyzes billions of data points to create profiles that identify, track, and analyze every website visitor. Use properties to create limitless segmentation options, including custom properties for any data point you need. Target these audiences with refined promotions that capture and convert leads faster than ever before. 
+
 * **Workflow Builder* ** - The marketing automation you’re used to with email is now available for your website experience. Visualize the complete visitor journey on one screen to ensure seamless flows from one interaction to the next. Scalable personalization through conversion automation is here.
+
 * **Content Gating, Age Verification, CCPA, and GDPR** - Easily gate valuable content using Justuno promotions, verify the age of your website visitors and stay compliant through CCPA/GDPR notifications.
+
 * **Mobile Optimized Pop Ups (SEO Friendly)** - Engage and convert more mobile traffic with fully responsive designs that stay in compliance with current mobile SEO best practices and device-specific tracking to improve cross-device visitor experiences.
+
 * **Banners, Bars, and Slide-Ins** - Quickly add or change elements on your website for news, email capture, sale notifications, shipping thresholds, and other dynamic messaging.
+
 * **Exit Offers** - Add exit promotions to your site to keep more valuable traffic on your website and convert them.
+
 * **AI E-Commerce Offers​** - Enhance WooCommerce by preventing cart abandonment, increasing AOV, engaging repeat visitors, and more. Use AI-powered offers like intelligent upsell and cross-sell promotions to convert window shoppers into profitable customers.
+
 * **Advanced Analytics​** - Combining the power of your audience’s onsite micro-interactions with insights gathered from billions of additional user sessions, Justuno organizes and analyzes your data to present in-depth and straightforward reporting and analytics.
+
 * **Direct Integrations​** - Feed your Justuno data into MailChimp, Iterable, Klaviyo, Hubspot, Constant Contact, Rejoiner, Zapier, and more. Justuno integrates directly with 100+ marketing tools.
+
 * **Custom Code and API Access** - Don’t see something you're looking for? Add custom HTML/CSS/JS to your promotions, banners, and slide-ins, and use our custom embed options to integrate with your favorite tools.
+
 * **Themes by Conversion Experts​** - Quickly leverage Justuno’s extensive library of pre-built templates for both workflows and designs. These proven strategies are available for every goal, segment, and holiday imaginable. Full-screen takeovers, countdown timers, spin-to-wins, banners, age verification gates, holiday promos, mobile promos, socially integrated promos, and much more are available with just a few clicks.
 
 = THE JUSTUNO SUITE COMES WITH =
 
-
 * **Unlimited Design Studio** - Bring your pop-up and onsite promotion designs to life with the most customizable design canvas on the market. Start with a template and make it your own, or design from scratch.
+
 * **Multivariate and A/B Testing** - Test your designs, offers, and marketing copy to understand shoppers better and optimize your conversion funnel faster than ever.
+
 * **Audience Properties & Segments** Segment based on demographic, behavioral, geographic, and even custom properties for the most advanced target audiences possible. Use zero and first-party data for personalized messaging that drives successful conversions and boosts retention while also feeding that data into the rest of your MarTech stack for subsequent usage. 
+
 * **Single Use and Bulk Coupon Codes** - Upload bulk and single-use coupon codes. Add coupon codes to all onsite promotions, banners, slide-ins, and follow-up emails.
+
 * **Real-Time Dashboard and Analytics** - Receive a real-time snapshot of your conversion marketing success and overall website performance. Measure the impact of your marketing campaigns, identify optimization opportunities, and implement campaigns backed by data.
+
 * **New Features Added Constantly** - Our team adds new features to the platform based on user feedback, updates, and industry trends. We are always updating integrations, designing new themes, adding requested targeting rules, and more! With Justuno, you can expect the latest and greatest functionality to help you grow your business.
 
 * **Optional Managed Service Plans** - We have solutions that fit your specific needs, whether you’re looking for additional strategy or integration help to fully managed white-glove services. Let our conversion experts take your marketing to the next level with our Managed Services. (https://www.justuno.com/managed-services/?utm_campaign=WordPress%20Listing&utm_source=App%20Store&utm_medium=Profile)
 
 Go live with your first [Justuno.com](https://www.justuno.com/?utm_campaign=WordPress%20Listing&utm_source=App%20Store&utm_medium=Profile) campaign on your online store in minutes!
 
-
 == Installation ==
 You can install the plugin two ways:
 1. Upload the folder 'wp-justuno' to the '/wp-content/plugins/' directory
 2. Download the "Justuno.zip" and upload via Wordpress Admin > Plugins
 Then activate the plugin through the 'Plugins' menu in WordPress. You will need a Justuno account to do so.
-
 
 == Changelog ==
 = 4.0 =
