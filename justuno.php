@@ -40,8 +40,8 @@ if (is_admin()) {
     require_once dirname(__FILE__) . '/includes/Frontend.php';
 }
 
-add_filter('plugin_action_links_justuno/justuno.php', 'nc_settings_link');
-function nc_settings_link($links)
+add_filter('plugin_action_links_justuno/justuno.php', 'justuno_nc_settings_link');
+function justuno_nc_settings_link($links)
 {
     // Build and escape the URL.
     $url = esc_url(

@@ -278,15 +278,21 @@ if (!class_exists('JustWooCommerce')) {
             $date = isset($data['date']) ? $data['date'] : null;
             $limit = isset($data['limit']) ? $data['limit'] : 20;
             $page = isset($data['page']) ? $data['page'] : 1;
+            $created_at_min = isset($data['created_at_min']) ? $data['created_at_min'] : null;
+
             $args = [
                 'limit' => $limit,
                 'page' => $page,
-                'orderby' => 'modified',
+                'orderby' => 'date',
                 'order' => 'DESC',
             ];
 
             if ($date !== null) {
                 $args['date_modified'] = '>=' . strtotime($date);
+            }
+
+            if ($created_at_min !== null) {
+                $args['date_created'] = '>=' . strtotime($created_at_min);
             }
 
             $orders = [];
