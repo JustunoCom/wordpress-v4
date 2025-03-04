@@ -39,7 +39,7 @@ if (!function_exists('justuno_script_for_subdomain')) {
 
 
 // define the woocommerce_thankyou callback 
-function action_woocommerce_thankyou($order_get_id)
+function ju4_action_woocommerce_thankyou($order_get_id)
 {
     $code = '';
     $order_id = absint($order_get_id);
@@ -80,4 +80,4 @@ function action_woocommerce_thankyou($order_get_id)
 }
 
 // add the action 
-add_action('woocommerce_thankyou', 'action_woocommerce_thankyou', 10, 1);
+add_action('woocommerce_thankyou', 'ju4_action_woocommerce_thankyou', 10, 1);
