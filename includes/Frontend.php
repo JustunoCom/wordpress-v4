@@ -21,8 +21,8 @@ add_action('wp_head', 'justuno_script_for_subdomain');
 if (!function_exists('justuno_script_for_subdomain')) {
     function justuno_script_for_subdomain()
     {
-        $data = esc_attr(get_option('justuno_api_key', ''));
-        $baseURL = "https://" . esc_attr(get_option('justuno_api_key', ''));
+        $data = esc_attr(get_option('ju4_justuno_api_key', ''));
+        $baseURL = "https://" . esc_attr(get_option('ju4_justuno_api_key', ''));
         $apiURL = "https://api.justuno.com";
         $objRESTManager = new Integrations\ju4_JustRESTManager();
         $code = $objRESTManager->getConversionTrackingCodes();

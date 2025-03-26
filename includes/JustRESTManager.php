@@ -19,7 +19,7 @@ if (!class_exists('ju4_JustRESTManager')) {
             if ($_GET['type'] == 'cart' || $_GET['type'] == 'product-single') {
                 return true;
             } else if (isset($haders['HTTP_AUTHORIZATION'])) {
-                return str_replace("Bearer ", "", $haders['HTTP_AUTHORIZATION']) == get_option('justuno_woocommerce_token');
+                return str_replace("Bearer ", "", $haders['HTTP_AUTHORIZATION']) == get_option('ju4_justuno_woocommerce_token');
             }
 
             return false;
