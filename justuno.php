@@ -7,7 +7,7 @@
 Plugin Name: Justuno Reimagined
 Plugin URI: https://www.justuno.com
 Description: Grow your social audience, email subscribers & sales!
-Version: 4.0.5
+Version: 4.0.6
 Author: Justuno
 Author URI: http://www.justuno.com
 License: GPLv2 or later
@@ -20,9 +20,9 @@ if (!function_exists('justuno_activation')) {
     function justuno_activation()
     {
         // send any api calls when activation
-        update_option('ju4_justuno_api_key', '');
-        update_option('ju4_justuno_woocommerce_token', '');
-        update_option('justuno_sub_domain', 'justone.ai');
+        //update_option('ju4_justuno_api_key', '');
+        //update_option('ju4_justuno_woocommerce_token', '');
+        //update_option('justuno_sub_domain', 'justone.ai');
     }
 }
 
