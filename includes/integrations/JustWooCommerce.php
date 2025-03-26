@@ -2,8 +2,8 @@
 
 namespace Integrations;
 
-if (!class_exists('JustWooCommerce')) {
-    class JustWooCommerce
+if (!class_exists('ju4_JustWooCommerce')) {
+    class ju4_JustWooCommerce
     {
         public function getVerboseData($data)
         {

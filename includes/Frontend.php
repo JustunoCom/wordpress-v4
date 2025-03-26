@@ -10,7 +10,7 @@ add_action('template_redirect', function () {
     global $wp_query;
     if ($wp_query->query_vars['pagename'] === "justuno-sync-job") {
         header('Content-type: application/json');
-        $objRESTManager = new Integrations\JustRESTManager();
+        $objRESTManager = new Integrations\ju4_JustRESTManager();
         $objRESTManager->entertainCall();
         die;
     }
@@ -24,7 +24,7 @@ if (!function_exists('justuno_script_for_subdomain')) {
         $data = esc_attr(get_option('justuno_api_key', ''));
         $baseURL = "https://" . esc_attr(get_option('justuno_api_key', ''));
         $apiURL = "https://api.justuno.com";
-        $objRESTManager = new Integrations\JustRESTManager();
+        $objRESTManager = new Integrations\ju4_JustRESTManager();
         $code = $objRESTManager->getConversionTrackingCodes();
         $data_field_result = get_option('justuno_sub_domain');
         if ($data_field_result != "") {

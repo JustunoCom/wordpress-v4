@@ -1,5 +1,5 @@
 <?php
-	class JustunoAccess{
+	class ju4_JustunoAccess{
 		private $apiKey;
 		private $domain;
 		private $email;
@@ -19,7 +19,7 @@
 		public function getWidgetConfig(){
             // Check if the cURL extension is loaded
             if(!extension_loaded("curl")){
-                throw new JustunoAccessException('Plug-in requires php `curl` extension which seems to be not activated on this server. Please activate it.');
+                throw new ju4_JustunoAccessException('Plug-in requires php `curl` extension which seems to be not activated on this server. Please activate it.');
             }
         
             $params = array(
@@ -43,7 +43,7 @@
         
             // Check for errors
             if (is_wp_error($response)) {
-                throw new JustunoAccessException('Request error: ' . esc_attr($response->get_error_message()));
+                throw new ju4_JustunoAccessException('Request error: ' . esc_attr($response->get_error_message()));
             }
         
             $body = wp_remote_retrieve_body($response);
@@ -53,17 +53,17 @@
             try {
                 $dom->loadXML($body);
             } catch (Exception $e) {
-                throw new JustunoAccessException('Failed to parse XML response: ' .esc_attr($e->getMessage()));
+                throw new ju4_JustunoAccessException('Failed to parse XML response: ' .esc_attr($e->getMessage()));
             }
         
             $nodes = $dom->getElementsByTagName('result');
             if (!$nodes || $nodes->length == 0) {
-                throw new JustunoAccessException('Incorrect response from remote server');
+                throw new ju4_JustunoAccessException('Incorrect response from remote server');
             }
         
             if ($nodes->item(0)->nodeValue == 0) {
                 $nodes = $dom->getElementsByTagName('error');
-                throw new JustunoAccessException(esc_attr($nodes->item(0)->nodeValue));
+                throw new ju4_JustunoAccessException(esc_attr($nodes->item(0)->nodeValue));
             }
         
             $justunoConf = array();
@@ -110,7 +110,7 @@
         
             // Check for errors
             if (is_wp_error($response)) {
-                throw new JustunoAccessException('Request error: ' . esc_attr($response->get_error_message()));
+                throw new ju4_JustunoAccessException('Request error: ' . esc_attr($response->get_error_message()));
             }
         
             $body = wp_remote_retrieve_body($response);
@@ -120,17 +120,17 @@
             try {
                 $dom->loadXML($body);
             } catch (Exception $e) {
-                throw new JustunoAccessException('Failed to parse XML response: ' . esc_attr($e->getMessage()));
+                throw new ju4_JustunoAccessException('Failed to parse XML response: ' . esc_attr($e->getMessage()));
             }
         
             $nodes = $dom->getElementsByTagName('result');
             if (!$nodes || $nodes->length == 0) {
-                throw new JustunoAccessException('Incorrect response from remote server');
+                throw new ju4_JustunoAccessException('Incorrect response from remote server');
             }
         
             if ($nodes->item(0)->nodeValue == 0) {
                 $nodes = $dom->getElementsByTagName('error');
-                throw new JustunoAccessException(esc_attr($nodes->item(0)->nodeValue));
+                throw new ju4_JustunoAccessException(esc_attr($nodes->item(0)->nodeValue));
             }
         
             $nodes = $dom->getElementsByTagName('secure_login_url');
@@ -138,10 +138,10 @@
                 return $nodes->item(0)->nodeValue;
             }
         
-            throw new JustunoAccessException('No secure login URL found in response');
+            throw new ju4_JustunoAccessException('No secure login URL found in response');
         }        
 	}
 	
-	class JustunoAccessException extends Exception{
+	class ju4_JustunoAccessException extends Exception{
 		
 	}

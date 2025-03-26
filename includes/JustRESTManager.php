@@ -4,14 +4,14 @@ namespace Integrations;
 
 require_once dirname(__FILE__) . '/integrations/JustWooCommerce.php';
 
-if (!class_exists('JustRESTManager')) {
-    class JustRESTManager
+if (!class_exists('ju4_JustRESTManager')) {
+    class ju4_JustRESTManager
     {
         public $JustWooService = null;
 
         public function __construct()
         {
-            $this->JustWooService = new JustWooCommerce();
+            $this->JustWooService = new ju4_JustWooCommerce();
         }
 
         public function verifyWooCommerceToken($haders)
