@@ -1,7 +1,7 @@
 <?php
-add_action('admin_menu', 'justuno_plugin_menu');
-if (!function_exists('justuno_plugin_menu')) {
-    function justuno_plugin_menu()
+add_action('admin_menu', 'v4_justuno_plugin_menu');
+if (!function_exists('v4_justuno_plugin_menu')) {
+    function v4_justuno_plugin_menu()
     {
         add_options_page('Justuno Reimagined', 'Justuno Reimagined', 'manage_options', 'ju4_justuno-settings-conf', 'ju4_justuno_plugin_page');
     }
