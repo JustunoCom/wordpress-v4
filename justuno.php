@@ -20,8 +20,8 @@ if (!function_exists('justuno_activation')) {
     function justuno_activation()
     {
         // send any api calls when activation
-        update_option('justuno_api_key', '');
-        update_option('justuno_woocommerce_token', '');
+        update_option('ju4_justuno_api_key', '');
+        update_option('ju4_justuno_woocommerce_token', '');
         update_option('justuno_sub_domain', 'justone.ai');
     }
 }
