@@ -3,12 +3,12 @@ add_action('admin_menu', 'justuno_plugin_menu');
 if (!function_exists('justuno_plugin_menu')) {
     function justuno_plugin_menu()
     {
-        add_options_page('Justuno Reimagined', 'Justuno Reimagined', 'manage_options', 'justuno-settings-conf', 'justuno_plugin_page');
+        add_options_page('Justuno Reimagined', 'Justuno Reimagined', 'manage_options', 'ju4_justuno-settings-conf', 'ju4_justuno_plugin_page');
     }
 }
 
-if (!function_exists('justuno_plugin_page')) {
-    function justuno_plugin_page()
+if (!function_exists('ju4_justuno_plugin_page')) {
+    function ju4_justuno_plugin_page()
     {
         $link = 'http://www.justuno.com/getstarted.html';
         ?>
@@ -28,18 +28,18 @@ if (!function_exists('justuno_plugin_page')) {
     }
 }
 
-add_filter('admin_enqueue_scripts', 'justuno_admin_js_files');
-if (!function_exists('justuno_admin_js_files')) {
-    function justuno_admin_js_files($files)
+add_filter('admin_enqueue_scripts', 'ju4_justuno_admin_js_files');
+if (!function_exists('ju4_justuno_admin_js_files')) {
+    function ju4_justuno_admin_js_files($files)
     {
         $script_version = '1.0.0';
         wp_enqueue_script('my_custom_script', plugins_url('/js/admin.js', __FILE__), array('jquery'), $script_version, true);
     }
 }
 
-add_action("admin_init", "justuno_display_options");
-if (!function_exists('justuno_display_options')) {
-    function justuno_display_options()
+add_action("admin_init", "ju4_justuno_display_options");
+if (!function_exists('ju4_justuno_display_options')) {
+    function ju4_justuno_display_options()
     {
         add_settings_section(
             'justuno_api_key',
@@ -121,7 +121,7 @@ if (!function_exists('justuno_display_options')) {
 
     function justuno_api_key_description()
     {
-        echo '<p>You need to have an existing account at justuno.com.<br /><a target="_blank" href="https://www.justuno.com/get-started/">Click here</a> to create a Free Trial account if needed.</p><p style="margin-bottom: 25px;">For more help with this screen, <a target="_blank" href="https://support.justuno.com/install-justuno-on-woocommerce">click here</a><br /></p>';
+        echo '<p>You need to have an existing account at justuno.com.<br /><a target="_blank" href="https://www.justuno.com/get-started/">Click here</a> to create a Free Trial account if needed.</p><p style="margin-bottom: 25px;">For more help with this screen, <a target="_blank" href="https://hub.justuno.com/knowledge/install-justuno-on-your-wordpress-woocommerce-store">click here</a><br /></p>';
     }
 
     function justuno_api_key_field($args)
