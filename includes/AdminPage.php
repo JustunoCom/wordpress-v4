@@ -138,7 +138,7 @@ if (!function_exists('ju4_justuno_display_options')) {
     // ------------------------------------------------
     function justuno_sub_domain_description()
     {
-        echo '<p>A subdomain will act as proxy to our server that would server all the files and API endpoints to your website<br /></p>';
+        echo '<p>A subdomain will act as proxy to our server that will serve all the files and API endpoints to your website.<br />NOTE: leave this as justone.ai unless you have successfully setup your visibility boost sub domain in your justuno account.<br /></p>';
     }
 
 

@@ -58,5 +58,5 @@ Then activate the plugin through the 'Plugins' menu in WordPress. You will need 
 == Changelog ==
 = 4.0 =
 * Compatibility with the All New Justuno
-= 4.0.6 =
+= 4.0.7 =
 * Fixed incompatibilities with legacy justuno plugin
