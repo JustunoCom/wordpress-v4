@@ -7,7 +7,7 @@
 Plugin Name: Justuno Reimagined
 Plugin URI: https://www.justuno.com
 Description: Grow your social audience, email subscribers & sales!
-Version: 4.0.3
+Version: 4.0.4
 Author: Justuno
 Author URI: http://www.justuno.com
 License: GPLv2 or later
@@ -40,14 +40,14 @@ if (is_admin()) {
     require_once dirname(__FILE__) . '/includes/Frontend.php';
 }
 
-add_filter('plugin_action_links_justuno/justuno.php', 'justuno_nc_settings_link');
-function justuno_nc_settings_link($links)
+add_filter('plugin_action_links_justuno/justuno.php', 'ju4_justuno_nc_settings_link');
+function ju4_justuno_nc_settings_link($links)
 {
     // Build and escape the URL.
     $url = esc_url(
         add_query_arg(
             'page',
-            'justuno-settings-conf',
+            'ju4_justuno-settings-conf',
             get_admin_url() . 'options-general.php'
         )
     );
