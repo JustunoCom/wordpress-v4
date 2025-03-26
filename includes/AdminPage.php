@@ -145,7 +145,7 @@ if (!function_exists('ju4_justuno_display_options')) {
 
     function justuno_sub_domain_field($args)
     {
-        $result_data = esc_attr(get_option('justuno_sub_domain', ''));
+        $result_data = esc_attr(get_option('justuno_sub_domain', 'justone.ai'));
 
         printf(
             '<input type="text" name="justuno_sub_domain" value="%1$s" class="all-options" id="%2$s" />',
