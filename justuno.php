@@ -15,22 +15,22 @@ License: GPLv2 or later
 
 include_once dirname(__FILE__) . '/includes/AdminPage.php';
 
-if (!function_exists('justuno_activation')) {
-    register_activation_hook(__FILE__, 'justuno_activation');
-    function justuno_activation()
+if (!function_exists('ju4_justuno_activation')) {
+    register_activation_hook(__FILE__, 'ju4_justuno_activation');
+    function ju4_justuno_activation()
     {
         // send any api calls when activation
         //update_option('ju4_justuno_api_key', '');
         //update_option('ju4_justuno_woocommerce_token', '');
-        //update_option('justuno_sub_domain', 'justone.ai');
+        //update_option('ju4_justuno_sub_domain', 'justone.ai');
     }
 }
 
-if (!function_exists('justuno_deactivation')) {
-    register_deactivation_hook(__FILE__, 'justuno_deactivation');
-    function justuno_deactivation()
+if (!function_exists('ju4_justuno_deactivation')) {
+    register_deactivation_hook(__FILE__, 'ju4_justuno_deactivation');
+    function ju4_justuno_deactivation()
     {
-        delete_option('justuno_options');
+        delete_option('ju4_justuno_options');
     }
 }
 

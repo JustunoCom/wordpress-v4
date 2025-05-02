@@ -1,4 +1,4 @@
-function justuno_generate_random_token() {
+function ju4_generate_random_token() {
   const element = document.getElementById("ju4_justuno_woocommerce_token");
   if (element && element !== null) {
     element.value =

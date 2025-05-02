@@ -19,7 +19,7 @@ if (!function_exists('ju4_justuno_plugin_page')) {
                 <?php do_settings_sections('ju4_justuno_base_settings'); ?>
                 <input name="Submit" class="button button-primary" type="submit" value="Save Changes" />
                 <?php if (class_exists('WooCommerce')): ?>
-                    <input name="button" class="button button-secondary" type="button" onclick="justuno_generate_random_token()"
+                    <input name="button" class="button button-secondary" type="button" onclick="ju4_generate_random_token()"
                         value="Regenerate Token" />
                 <?php endif; ?>
             </form>
@@ -33,7 +33,7 @@ if (!function_exists('ju4_justuno_admin_js_files')) {
     function ju4_justuno_admin_js_files($files)
     {
         $script_version = '1.0.0';
-        wp_enqueue_script('my_custom_script', plugins_url('/js/admin.js', __FILE__), array('jquery'), $script_version, true);
+        wp_enqueue_script('ju4_justuno_my_custom_script', plugins_url('/js/v4-admin.js', __FILE__), array('jquery'), $script_version, true);
     }
 }
 
@@ -70,7 +70,7 @@ if (!function_exists('ju4_justuno_display_options')) {
         add_settings_section(
             'justuno_sub_domain',
             'Visibility Boost Domain',
-            'justuno_sub_domain_description',
+            'ju4_justuno_sub_domain_description',
             'ju4_justuno_base_settings'
         );
 
@@ -84,7 +84,7 @@ if (!function_exists('ju4_justuno_display_options')) {
         add_settings_field(
             'justuno_sub_domain',
             'Justuno Subdomain URL',
-            'justuno_sub_domain_field',
+            'ju4_justuno_sub_domain_field',
             'ju4_justuno_base_settings',
             'justuno_sub_domain',
             array('label_for_sub_domain' => 'justuno_sub_domain')
@@ -136,19 +136,19 @@ if (!function_exists('ju4_justuno_display_options')) {
     }
 
     // ------------------------------------------------
-    function justuno_sub_domain_description()
+    function ju4_justuno_sub_domain_description()
     {
         echo '<p>A subdomain will act as proxy to our server that will serve all the files and API endpoints to your website.<br />NOTE: leave this as justone.ai unless you have successfully setup your visibility boost sub domain in your justuno account.<br /></p>';
     }
 
 
 
-    function justuno_sub_domain_field($args)
+    function ju4_justuno_sub_domain_field($args)
     {
-        $result_data = esc_attr(get_option('justuno_sub_domain', 'justone.ai'));
+        $result_data = esc_attr(get_option('ju4_justuno_sub_domain', 'justone.ai'));
 
         printf(
-            '<input type="text" name="justuno_sub_domain" value="%1$s" class="all-options" id="%2$s" />',
+            '<input type="text" name="ju4_justuno_sub_domain" value="%1$s" class="all-options" id="%2$s" />',
             esc_attr($result_data),
             esc_attr($args['label_for_sub_domain'])
         );
