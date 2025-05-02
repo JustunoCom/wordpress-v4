@@ -19,7 +19,7 @@ if (!function_exists('ju4_justuno_plugin_page')) {
                 <?php do_settings_sections('ju4_justuno_base_settings'); ?>
                 <input name="Submit" class="button button-primary" type="submit" value="Save Changes" />
                 <?php if (class_exists('WooCommerce')): ?>
-                    <input name="button" class="button button-secondary" type="button" onclick="justuno_generate_random_token()"
+                    <input name="button" class="button button-secondary" type="button" onclick="ju4_generate_random_token()"
                         value="Regenerate Token" />
                 <?php endif; ?>
             </form>
