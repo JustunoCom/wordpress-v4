@@ -81,3 +81,49 @@ function ju4_action_woocommerce_thankyou($order_get_id)
 
 // add the action 
 add_action('woocommerce_thankyou', 'ju4_action_woocommerce_thankyou', 10, 1);
+
+
+
+
+function my_custom_add_to_cart_action($cart_item_key, $product_id, $quantity, $variation_id, $variation, $cart_item_data)
+{
+    wp_add_inline_script('jquery', "console.log('Product added: ' + " . $product_id . ")");
+}
+
+function ju4_action_cart_tracking()
+{
+    $code = '';
+    $cart = \WC()->cart;
+    $totals = $cart->get_totals();
+    $code .= 'ju4app("cart", {
+	total:' . $totals['total'] . ',
+	subtotal:' . $totals['subtotal'] . ',
+	tax:' . $totals['total_tax'] . ',
+	shipping:' . $totals['shipping_total'] . ',
+	currency:"' . get_woocommerce_currency() . '",
+	}
+);';
+    $cartItems = $cart->get_cart_contents();
+    if (count($cartItems) > 0) {
+        $code .= "ju4app('cartItems', [";
+        foreach ($cart->get_cart() as $key => $item) {
+            $cartItem = $cart->get_cart_item($key);
+            $attrs = '';
+            if ($cartItem['variation_id'] > 0) {
+                foreach ($cartItem['variation'] as $key => $value) {
+                    $attrs .= str_replace('attribute_', '', str_replace('pa_', '', $key)) . ": '{$value}', ";
+                }
+            }
+            $variationId = $cartItem['variation_id'] > 0 ? $cartItem['variation_id'] : $cartItem['product_id'];
+            $product = $cartItem['data'];
+            $p = floatval($product->get_price());
+            $code .= "
+{ productID: '{$cartItem['product_id']}', variationID: '{$variationId}', sku:'{$product->get_sku()}', qty: {$cartItem['quantity']}, price: {$p}},";
+        }
+        $code = substr($code, 0, -1);
+        $code .= "])";
+    }
+    wp_add_inline_script('jquery', 'setTimeout(function(){' . $code . '}, 2000);');
+}
+
+add_action('woocommerce_add_to_cart', 'ju4_action_cart_tracking');

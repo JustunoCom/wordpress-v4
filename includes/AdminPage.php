@@ -68,7 +68,7 @@ if (!function_exists('ju4_justuno_display_options')) {
         // -----------------------------------------
 
         add_settings_section(
-            'justuno_sub_domain',
+            'ju4_justuno_sub_domain',
             'Visibility Boost Domain',
             'ju4_justuno_sub_domain_description',
             'ju4_justuno_base_settings'
@@ -77,17 +77,17 @@ if (!function_exists('ju4_justuno_display_options')) {
         // Register a callback
         register_setting(
             'ju4_justuno_base_settings',
-            'justuno_sub_domain',
+            'ju4_justuno_sub_domain',
             'trim'
         );
 
         add_settings_field(
-            'justuno_sub_domain',
+            'ju4_justuno_sub_domain',
             'Justuno Subdomain URL',
             'ju4_justuno_sub_domain_field',
             'ju4_justuno_base_settings',
-            'justuno_sub_domain',
-            array('label_for_sub_domain' => 'justuno_sub_domain')
+            'ju4_justuno_sub_domain',
+            array('label_for_sub_domain' => 'ju4_justuno_sub_domain')
         );
 
         // -----------------------------------------
