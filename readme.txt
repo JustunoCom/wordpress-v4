@@ -60,3 +60,5 @@ Then activate the plugin through the 'Plugins' menu in WordPress. You will need 
 * Compatibility with the All New Justuno
 = 4.0.7 =
 * Fixed incompatibilities with legacy justuno plugin
+= 4.0.9 =
+* Fixed issue with base url
