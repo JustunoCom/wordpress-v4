@@ -22,7 +22,7 @@ if (!function_exists('ju4_justuno_script_for_subdomain')) {
     function ju4_justuno_script_for_subdomain()
     {
         $data = esc_attr(get_option('ju4_justuno_api_key', ''));
-        $baseURL = "https://" . esc_attr(get_option('ju4_justuno_api_key', ''));
+        $baseURL = "https://" . esc_attr(get_option('ju4_justuno_sub_domain', 'justone.ai'));
         $apiURL = "https://api.justuno.com";
         $objRESTManager = new Integrations\ju4_JustRESTManager();
         $code = $objRESTManager->getConversionTrackingCodes();
