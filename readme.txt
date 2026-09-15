@@ -62,3 +62,5 @@ Then activate the plugin through the 'Plugins' menu in WordPress. You will need 
 * Fixed incompatibilities with legacy justuno plugin
 = 4.0.9 =
 * Fixed issue with base url
+= 4.1.0 =
+* Fixed issue product name/sku json escaping
