@@ -50,8 +50,8 @@ function ju4_action_woocommerce_thankyou($order_get_id)
             $cartItems[] = '{
                             productID:' . $item->get_product_id() . ',
                             variationID:' . ($item->get_variation_id() > 0 ? $item->get_variation_id() : $item->get_product_id()) . ',
-                            sku:"' . $item->get_product()->get_sku() . '",
-                            name:"' . $item->get_name() . '",
+                            sku:' . json_encode($item->get_product()->get_sku()) . ',
+                            name:' . json_encode($item->get_name()) . ',
                             qty:' . floatval($item->get_quantity()) . ',
                             price:' . floatval($item->get_total()) . '
                         }';
@@ -118,7 +118,7 @@ function ju4_action_cart_tracking()
             $product = $cartItem['data'];
             $p = floatval($product->get_price());
             $code .= "
-{ productID: '{$cartItem['product_id']}', variationID: '{$variationId}', sku:'{$product->get_sku()}', qty: {$cartItem['quantity']}, price: {$p}},";
+{ productID: '{$cartItem['product_id']}', variationID: '{$variationId}', sku:" . json_encode($product->get_sku()) . ", qty: {$cartItem['quantity']}, price: {$p}},";
         }
         $code = substr($code, 0, -1);
         $code .= "])";
